@@ -25,12 +25,32 @@ public class Connect4 {
         System.out.println("1 2 3 4 5 6 7");
     }
 
+    public void escolherCor(){
+        System.out.println("Escolha sua cor!");
+        System.out.println("1- Vermelho (v): ");
+        System.out.println("2 - Azul (a): ");
+        char cor = sc.next().charAt(0);
+
+        char corJogador;
+        char corComputador;
+        if(cor == 'v'){
+            corJogador = 'v';
+            corComputador = 'a';
+            System.out.println("Voce é o vermelhor. Computador é azul");
+        } else {
+            corJogador = 'a';
+            corComputador = 'v';
+            System.out.println("Voce é o azul. Computador é vermelho");
+        }
+    }
+
     public Connect4() {
         Scanner sc = new Scanner(System.in);
         char tabuleiro[][] = new char[6][7];
 
         tabuleiroBranco();
         ImprimirTabuleiro();
+        escolherCor();
 
     }
 

@@ -2,11 +2,7 @@ import java.util.Scanner;
 
 public class Connect4 {
 
-    Scanner sc = new Scanner(System.in);
-
-    char tabuleiro[][] = new char[6][7];
-
-    public void tabuleiroBranco() {
+    public void tabuleiroBranco(char[][] tabuleiro) {
         for (int linha = 0; linha < 6; linha++) {
             for (int colunas = 0; colunas < 7; colunas++) {
                 tabuleiro[linha][colunas] = 'B';
@@ -14,7 +10,7 @@ public class Connect4 {
         }
     }
 
-    public void ImprimirTabuleiro() {
+    public void ImprimirTabuleiro(char[][] tabuleiro) {
         for (int linha = 0; linha < 6; linha++) {
             for (int colunas = 0; colunas < 7; colunas++) {
                 System.out.print(tabuleiro[linha][colunas] + " ");
@@ -25,13 +21,28 @@ public class Connect4 {
         System.out.println("1 2 3 4 5 6 7");
     }
 
+    public void adicionarPeca(char cor, char[][] tabuleiro, Scanner sc){
+        int coluna;
+        ImprimirTabuleiro(tabuleiro);
+        System.out.println("Digite a coluna que deseja acrescentar a peça: (1 á 7)");
+        coluna = sc.nextInt() -1;
+
+        for (int linha = 5; linha >=0; linha--){
+           if (tabuleiro[linha][coluna] == 'B'){
+            tabuleiro[linha][coluna] == cor;
+            break;
+           }
+        }
+        ImprimirTabuleiro(tabuleiro);
+    }
+
     public Connect4() {
         Scanner sc = new Scanner(System.in);
-        char tabuleiro[][] = new char[6][7];
+       char tabuleiro[][] = new char[6][7];
 
-        tabuleiroBranco();
-        ImprimirTabuleiro();
-
+        tabuleiroBranco(tabuleiro);
+        ImprimirTabuleiro(tabuleiro);
+        sc.close();
     }
 
     public static void main(String[] args) {

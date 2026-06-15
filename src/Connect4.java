@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 public class Connect4 {
 
+    Scanner sc = new Scanner(System.in);
     public void tabuleiroBranco(char[][] tabuleiro) {
         for (int linha = 0; linha < 6; linha++) {
             for (int colunas = 0; colunas < 7; colunas++) {

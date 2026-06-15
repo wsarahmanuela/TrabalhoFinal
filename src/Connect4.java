@@ -29,7 +29,7 @@ public class Connect4 {
 
         for (int linha = 5; linha >=0; linha--){
            if (tabuleiro[linha][coluna] == 'B'){
-            tabuleiro[linha][coluna] == cor;
+            tabuleiro[linha][coluna] = cor;
             break;
            }
         }
@@ -40,8 +40,8 @@ public class Connect4 {
         Scanner sc = new Scanner(System.in);
        char tabuleiro[][] = new char[6][7];
 
-        tabuleiroBranco(tabuleiro);
-        ImprimirTabuleiro(tabuleiro);
+        tabuleiroBranco(tabuleiro); 
+        adicionarPeca('v', tabuleiro, sc);
         sc.close();
     }
 
